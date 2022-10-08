@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="D:/Thna/programming/Business Analytics/Nano degree projects/project 3/chinook_db/chinook.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="125"/><column_width id="3" width="5283"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,5:mainAlbum"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1">-- SELECT a.Title AS &quot;Album&quot;,count(t.Name) AS &quot;Number of Tracks&quot;
+-- FROM Track AS t
+-- JOIN Album AS a
+-- ON a.AlbumId = t.AlbumId
+-- GROUP BY 1
+-- ORDER BY 2 DESC
+-- LIMIT 5;
+-- SELECT 
+-- (c.FirstName || &quot; &quot; || c.LastName) AS &quot;Customer Name&quot;,
+-- sum(i.total) AS total
+-- FROM Customer AS c
+-- JOIN Invoice AS i
+-- ON c.CustomerId = i.CustomerId
+-- GROUP BY 1
+-- ORDER BY 2 DESC
+-- LIMIT 5;
+
+-- SELECT a.Title AS &quot;Album&quot;,g.Name AS Genre,count(t.Name) AS &quot;Number of Tracks&quot;
+-- FROM Track AS t
+-- JOIN Album AS a
+-- ON a.AlbumId = t.AlbumId
+-- JOIN Genre AS g
+-- ON g.GenreId = t.GenreId
+-- GROUP BY 2
+-- ORDER BY 3 DESC
+-- LIMIT 5;
+SELECT art.Name AS &quot;Singer&quot;, a.Title As &quot;Album&quot;,count(*)
+FROM Album AS a
+JOIN Artist AS art
+ON a.ArtistId = art.ArtistId
+GROUP BY 1
+ORDER BY 3 DESC
+LIMIT 7;</sql><current_tab id="0"/></tab_sql></sqlb_project>

@@ -1,0 +1,41 @@
+/* Query 1 */
+SELECT a.Title AS "Album",count(t.Name) AS "Number of Tracks"
+FROM Track AS t
+JOIN Album AS a
+ON a.AlbumId = t.AlbumId
+GROUP BY 1
+ORDER BY 2 DESC
+LIMIT 5;
+
+---------------------------------------------------------------------------------------------------
+/* Query 2 */
+SELECT 
+(c.FirstName || " " || c.LastName) AS "Customer Name",
+sum(i.total) AS total
+FROM Customer AS c
+JOIN Invoice AS i
+ON c.CustomerId = i.CustomerId
+GROUP BY 1
+ORDER BY 2 DESC
+LIMIT 5;
+
+---------------------------------------------------------------------------------------------------
+/* Query 3 */
+SELECT a.Title AS "Album",g.Name AS Genre,count(t.Name) AS "Number of Tracks"
+FROM Track AS t
+JOIN Album AS a
+ON a.AlbumId = t.AlbumId
+JOIN Genre AS g
+ON g.GenreId = t.GenreId
+GROUP BY 2
+ORDER BY 3 DESC
+LIMIT 5;
+---------------------------------------------------------------------------------------------------
+/* Query 4 */
+SELECT art.Name AS "Singer", a.Title As "Album",count(*)
+FROM Album AS a
+JOIN Artist AS art
+ON a.ArtistId = art.ArtistId
+GROUP BY 1
+ORDER BY 3 DESC
+LIMIT 7;
